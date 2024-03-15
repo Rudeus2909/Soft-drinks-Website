@@ -1,0 +1,759 @@
+/**** phần body *****/
+body {
+	max-width: 2048px;	
+	margin: auto;
+	font: 1.2em Helvetica, arial, sans-serif;
+	display: grid;
+	grid-template-areas:
+	"header-cell"
+	"nav-cell"
+	"main-cell"
+	"footer-cell";
+}
+
+
+main,header,footer {
+	border: 1px solid #ccc7c8;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+
+
+/** phần header**/
+header{
+    grid-area: header-cell;
+	margin-bottom:2px;
+	height:250px;
+	background-image: url("imgdoan/header.png");
+	
+}
+header nav{
+	
+	grid-area: nav-cell;
+	margin-top:5px;
+	margin-left: 24%;
+  }	
+header nav a
+{	
+	grid-area: nav-cell;
+	margin-top:5px;
+	margin-left: 22%;
+	float: left;
+	margin:5px;
+	border: 1px solid #fff;		
+	border-radius: 3px;	
+	padding: 8px 12px;
+	height:20px;
+	background:#ffffffc3;
+	text-decoration:none;
+	font-size: 25px;
+	color:#ff7417;	
+	text-align: center;
+	box-shadow: 0 0 3px 0 #00000066, 0 0 2px 0 #0000004d;	
+}
+.nav a:hover
+{   color:#fff;
+	background: #ed4190;	
+}
+.search-container{
+	
+	float: right;
+	padding-top: 5px;
+	padding-right: 10px;
+	}
+.icon-white,.icon-pink {
+    padding: 4px;
+    background: #beed4f;
+    min-width: 30px;	
+    color: rgb(255, 130, 4);
+    text-align: center;
+    cursor:pointer;
+	
+}
+.icon-pink {
+    color: rgb(255, 130, 4);
+    margin-left:5px;
+}
+#logo{
+	padding-top: 10px;
+	padding-left: 20px;
+    width: 180px;
+    border-radius: 50%;
+}
+
+
+
+
+
+/******* phần main **********************************/
+.main{
+	margin: 0 auto;
+	background-image: url("imgdoan/nen.png") ;
+	width: 100%;
+	max-height: 1000vh;
+	overflow: hidden;
+	border: 1px solid #ccc7c8;
+	border-radius: 5px;
+	
+}
+
+.main3{
+	margin: 0 auto;
+	background-image: url("imgdoan/header.jpeg") ;
+	width: 1200px;
+	height: 676px;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	overflow: hidden;
+	border: 1px solid black;
+	border-radius: 5px;
+	
+}
+
+.main2{
+	margin: 0 auto;
+	background-image: url("imgdoan/dangnhap.jpeg") ;
+	width: 848px;
+	height: 404px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	overflow: hidden;
+	border: 1px solid rgba(129, 121, 121, 0.533);
+	border-radius: 1000px;
+}
+.main1{
+	
+	margin: 0 auto;
+	width: 700px;
+	height: 360px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	overflow: hidden;
+	border: 1px solid rgba(129, 121, 121, 0.533);
+	border-radius: 10px;
+	margin-left: 30%;
+}
+
+
+
+
+
+
+/***   chuyển trang ********/
+.box, .box2, .box3{
+	position: absolute ;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(231, 180, 104);
+	color: white;
+	padding: 20px 40px;
+	font-family: monospace;
+	width: 200px;
+	border-radius: 10px;
+	border: rgba(92, 82, 82, 0.362) 2px solid;
+	margin-top: 20%;
+}
+.box input[id="readmore"], .box2 input[id="readmore2"], .box3 input[id="readmore3"]{
+	display: none;
+}
+.box h1, .box2 h1, .box3 h1{
+	margin-bottom: 30px;
+	text-align: center;
+}
+.box .des1, .box2 .des1, .box3 .des1{
+	text-align: justify;
+	position: relative;
+	overflow: hidden;
+	max-height: 200px;
+	transition: 0.5s ease-in-out;
+}
+.box .des1::before, .box2 .des1::before, .box3 .des1::before{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100px;
+	height: 50px;
+	transition: 0.5s ease-in-out;
+	content: '';
+	background-image: linear-gradient(to top, rgb(231, 180, 104), transparent);
+}
+.box .button, .box2 .button, .box3 .button{
+	margin-top: 30px;
+	text-align: center;
+}
+.box label, .box2 label, .box3 label{
+	text-align: center;
+	display: inline-block;
+	border: 1px solid rgb(255, 255, 255);
+	width: 140px;
+	height: 50px;
+	position: relative;
+	cursor: pointer;
+}
+.box label::before, .box2 label::before, .box3 label::before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: attr(data-more);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.box input[name="readmore"]:checked ~ .content1 label::before{
+	content: attr(data-less);
+}
+.box input[name="readmore"]:checked ~ .content1 .des1{
+	max-height: 700px;
+	
+}
+.box input[name="readmore"]:checked ~ .content1 .des1::before{
+	height: 0px;
+}
+
+
+/*************** . box2 ********/
+.box2{
+	left: 20%;
+}
+.box2 label::before{
+	content: attr(data2-more);
+}
+.box2 input[name="readmore2"]:checked ~ .content2 label::before{
+	content: attr(data2-less);
+}
+.box2 input[name="readmore2"]:checked ~ .content2 .des1{
+	max-height: 700px;
+	
+}
+.box2 input[name="readmore2"]:checked ~ .content2 .des1::before{
+	height: 0px;
+}
+
+
+/*************** .  box3   *********/
+.box3{
+	left: 80%;
+}
+.box3 label::before{
+	content: attr(data3-more);
+}
+.box3 input[name="readmore3"]:checked ~ .content3 label::before{
+	content: attr(data3-less);
+}
+.box3 input[name="readmore3"]:checked ~ .content3 .des1{
+	max-height: 700px;
+	
+}
+.box3 input[name="readmore3"]:checked ~ .content3 .des1::before{
+	height: 0px;
+}
+
+
+
+.content1, .content2, .content3{
+	position: relative;
+}
+
+.content1::before, .content2::before, .content3::before {
+	position: absolute;
+	bottom: 20px;
+	right: 4px;
+	left: 130px;
+	width: 120px;
+	height: 100px;
+	content: '';
+	background-image: url("imgdoan/qua-chanh.png");
+	background-size: 120%;
+	background-repeat: no-repeat;
+	z-index: 1;
+	transition: 1.3s ease-in-out;
+}
+.content2::before{
+	background-image: url("imgdoan/carot.png");
+	width: 150px;
+	height: 230px;
+	left: 140px;
+	bottom: 5px;
+}
+.content3::before{
+	background-image: url("imgdoan/thom.png");
+	width: 150px;
+	height: 200px;
+	left: 160px;
+	bottom: 2px;
+}
+
+.box input[name="readmore"]:checked ~ .content1::before{
+	bottom: 93%;
+	left: -85%;
+	transform: rotate(-50deg);
+	width: 220px;
+}
+.box2 input[name="readmore2"]:checked ~ .content2::before{
+	bottom: 85%;
+	left: -80%;
+	width: 210px;
+	background-image: url("imgdoan/kiss.png");
+}
+.box3 input[name="readmore3"]:checked ~ .content3::before{
+	bottom: 80%;
+	left: -100%;
+	width: 200px;
+	background-image: url("imgdoan/mess.png");
+}
+
+
+.box .content1 .des1 nav button a, .box2 .content2 .des1 button a ,.box3 .content3 .des1 nav button a {
+	color: red;
+}
+
+/********* . font  ******/
+
+main.one-col
+{ 
+	grid-template-areas:
+	"left-cell" 
+	"article-cell" 
+	"right-cell";
+}
+.image-left img {
+	float:left;
+	width:35%;
+	padding: 0 0 0 30px;
+	margin-bottom: 100px;
+}
+.image-left p ,.image-left h4, .image-left h1, .image-right p,.image-right h4, .image-right h1{
+	margin: 0 60px 0 0;		
+	width: 55%;
+	height: 80%;
+	float: right;
+	text-align: justify;
+	padding:0 5px;
+	margin-bottom:5px;
+}
+.image-left h1, .image-right h1{
+	text-align: center;
+}
+
+
+
+.image-right p,.image-right h4, .image-right h1
+{		
+	margin-left: 60px;
+	float: left;
+}
+.image-right img{
+	width:28%;
+	float:right;
+	padding: 0 30px 0 0;
+	margin-bottom: 50px;
+}
+
+
+.vb{
+	margin-bottom: 1rem!important;
+}
+.vb1{
+	flex: 0 0 auto;
+    max-width: 100%;
+	padding-top: 50px;
+}
+.vb1 h4, .vb1 h1{
+	color: rgba(217, 107, 48, 0.929);
+}
+
+
+.about .des1 {
+    font-size: 15px;
+    line-height: 23px;
+    overflow: hidden;
+}
+.fadeInUp {
+    animation-name: fadeInUp;
+	
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+@keyframes fadeInUp{
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 100%, 0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+h1.h11{
+	text-align: center;
+	color: rgb(50, 135, 133);
+	font-size: 85px;
+	position: relative;
+	left: 50%;
+	display: block;		
+	content: " "; 
+	max-width: 2048px;
+	height: 100px;	
+	transform: skewX(-12deg) translateX(-50%);
+	background: radial-gradient(#3b3b3b79, #fff);	
+	margin-top: 1%; 
+}
+
+
+
+
+/************** trang tin tức *********************************************************************************/
+.container{
+    position: relative;
+    left: 50%;
+    top: 43%;
+    bottom: 0px;
+    transform: translate(-50%, -50%);
+    max-width: 2048px;
+    height: 700px;
+    background-color: #f5f5f5;
+    box-shadow: 0 5px 5px #dbdbdb;
+}
+#slide{
+    width: max-content;
+    margin-top: 30px;
+}
+.item{
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 0.5s;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 5px 5px #505050;
+}
+.item:nth-child(1),.item:nth-child(2){
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 105%;
+    box-shadow: none;
+}
+.item:nth-child(3){
+    left: 60%;
+    top: 50%;
+}
+.item:nth-child(4){
+    top: 50%;
+    left: calc(60% + 220px);
+}
+.item:nth-child(5){
+    left: calc(50% + 440px);
+    opacity: 0;
+}
+
+.item .content{
+    position: relative;
+    top: 57%;
+    width: 300px;
+    left: 100px;
+    text-align: left;
+    padding: 0;
+    color: #eee;
+    transform: translate(0, -10%);
+    font-family: system-ui;
+}
+
+.item:nth-child(2) .content{
+    display: block;
+    z-index: 11111;
+}
+.item .name{
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards;
+}
+.item .des{
+    margin: 20px 0;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.5s 1 forwards;
+}
+.item .content button{
+    padding: 10px 20px;
+    border: none;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1s 1 forwards;
+}
+@keyframes showcontent{
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }to{
+        color:  orange;
+        opacity: 1;
+        transform: translate(0, 0);
+        filter: blur(0);
+    }
+}
+.item .content button:hover{
+    background: orange;
+}
+.item .content button p{
+    margin: 0;
+    color: red;
+}
+
+.item:nth-child(3) .content{
+    opacity: 0;
+}
+.item:nth-child(4) .content{
+    opacity: 0;
+}
+
+.buttons{
+    position: absolute;
+    bottom: 0px;
+    z-index: 222222;
+    text-align: center;
+    width: 100%;
+}
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #555;
+    transition: 0.5s;
+}.buttons button:hover{
+    background-color: orange;
+}
+
+footer{
+    grid-area: footer-cell;
+    text-align: center;
+    margin-top: 2px;
+	margin-bottom:30px ;
+	color: red;
+}
+
+footer .social-icon{
+    text-decoration: none;
+    color: orange;
+}
+
+.h1{
+	position: relative;
+	left: 50%;
+    font-family:'Courier New', Courier, monospace;
+	display: block;		
+	content: " "; 
+	max-width: 2048px;
+	height: 60px;	
+	transform: skewX(-12deg) translateX(-50%);
+	background: radial-gradient(#4a49496f, rgba(255, 255, 255, 0.49));	
+    margin: 12px 0 16px;
+    font-size: 35px;
+    line-height: 32px;
+    text-align: center;
+    color: rgba(255, 59, 59, 0.827);
+    padding-top: 30px;
+}
+
+/**Zalo Pay**/
+.section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.section div {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	margin: 3px;
+	border: 1px solid #dbd7d9;
+	border-radius: 5px;
+	background: linear-gradient(to top, orange 0%, transparent 10%);
+}
+
+.section div img {
+	display: block;
+	margin: auto;
+    width: 50%;
+}
+/*****************************************************************************************/
+
+/** Trang chủ **/
+.container1{
+    position: relative;
+    left: 50%;
+    top: 16.5%;
+    bottom: 10%;
+    transform: translate(-50%, -50%);
+    max-width: 2048px;
+    height: 400px;
+    background-color: #f5f5f5;
+    box-shadow: 0 5px 5px #dbdbdb;
+}
+#slide1{
+    width: max-content;
+    margin-top: 30px;
+}
+.item1{
+    width: 200px;
+    height: 300px;
+    background-position: 50% 50%;
+    display: inline-block;
+    transition: 0.5s;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+	bottom: 10%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 5px 5px #505050;
+}
+.item1:nth-child(1),.item1:nth-child(2){
+	border: 2px solid rgba(229, 7, 7, 0.449);
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 105%;
+    box-shadow: none;
+}
+.item1:nth-child(3){
+    left: 60%;
+    top: 50%;
+	opacity: 0;
+}
+.item1:nth-child(4){
+    top: 50%;
+    left: calc(60% + 220px);
+	opacity: 0;
+}
+.item1:nth-child(5){
+    left: calc(50% + 440px);
+    opacity: 0;
+}
+
+.item1 .content{
+    position: relative;
+    top: 44%;
+    width: 300px;
+    left: 100px;
+    text-align: left;
+    padding: 0;
+    color: #eee;
+    transform: translate(0, -10%);
+    font-family: system-ui;
+}
+
+.item1:nth-child(2) .content{
+    display: block;
+    z-index: 11111;
+	left: 36%;
+	top: 51%;
+	width: 400px;
+}
+
+.item1 .name{
+    font-size: 40px;
+    font-weight: bold;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1 forwards;
+}
+.item1 .des{
+    margin: 20px 0;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 0.5s 1 forwards;
+}
+.item1 .content button{
+    padding: 10px 20px;
+    border: none;
+    opacity: 0;
+    animation: showcontent 1s ease-in-out 1s 1 forwards;
+}
+
+.item1 .content button:hover{
+    background: orange;
+}
+.item1 .content button p{
+    margin: 0;
+    color: red;
+}
+
+.item1:nth-child(3) .content{
+    opacity: 0;
+}
+.item1:nth-child(4) .content{
+    opacity: 0;
+}
+
+.buttons1 .prev{
+	position: absolute;
+    top: 50%;
+	z-index: 1;
+    text-align: center;
+    width: 4%;
+	opacity: 0.1;
+}
+.buttons1 .next{
+	opacity: 0.3;
+	right: 0%;
+	position: absolute;
+    top: 50%;
+    z-index: 1;
+    text-align: center;
+    width: 4%;
+}
+.buttons1 button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #555;
+    transition: 0.5s;
+}.buttons1 button:hover{
+    background-color: orange;
+	color: white;
+	opacity: 0.7;
+}
+.container2{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+	padding-top: 90px;
+    position: relative;
+    left: 50%;
+    top: 20%;
+    bottom: 2%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    height: 380px;
+    background-color: gray;
+    box-shadow: 0 5px 5px #dbdbdb;
+}
+
+.rectangle{
+	top: 10%;
+	width: 250px;
+	height: 250px;
+	transition: 1s;
+}
+
+.rectangle:hover{
+	width: 350px;
+	height: 350px;
+}
